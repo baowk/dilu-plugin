@@ -6,7 +6,10 @@ require (
 	github.com/aliyun/aliyun-oss-go-sdk v3.0.1+incompatible
 	github.com/aws/aws-sdk-go v1.49.4
 	github.com/baowk/dilu-core v0.2.4
+	github.com/google/uuid v1.3.0
 	github.com/huaweicloud/huaweicloud-sdk-go-obs v3.23.9+incompatible
+	github.com/json-iterator/go v1.1.12
+	github.com/nsqio/go-nsq v1.1.0
 	github.com/pkg/errors v0.9.1
 	github.com/qiniu/api.v7/v7 v7.8.2
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.822
@@ -32,6 +35,7 @@ require (
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/golang-sql/civil v0.0.0-20220223132316-b832511892a9 // indirect
 	github.com/golang-sql/sqlexp v0.1.0 // indirect
+	github.com/golang/snappy v0.0.1 // indirect
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/gookit/color v1.3.6 // indirect
 	github.com/jackc/pgpassfile v1.0.0 // indirect
@@ -40,7 +44,6 @@ require (
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
-	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.4 // indirect
 	github.com/leodido/go-urn v1.2.4 // indirect
 	github.com/lestrrat-go/file-rotatelogs v2.4.0+incompatible // indirect
