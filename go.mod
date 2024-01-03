@@ -12,6 +12,8 @@ require (
 	github.com/nsqio/go-nsq v1.1.0
 	github.com/pkg/errors v0.9.1
 	github.com/qiniu/api.v7/v7 v7.8.2
+	github.com/rabbitmq/amqp091-go v1.9.0
+	github.com/redis/go-redis/v9 v9.0.5
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common v1.0.822
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/sms v1.0.822
 	github.com/tencentyun/cos-go-sdk-v5 v0.7.45
@@ -56,7 +58,6 @@ require (
 	github.com/modern-go/reflect2 v1.0.2 // indirect
 	github.com/mozillazg/go-httpheader v0.2.1 // indirect
 	github.com/pelletier/go-toml/v2 v2.0.8 // indirect
-	github.com/redis/go-redis/v9 v9.0.5 // indirect
 	github.com/shamsher31/goimgext v1.0.0 // indirect
 	github.com/spf13/cast v1.5.1 // indirect
 	github.com/twitchyliquid64/golang-asm v0.15.1 // indirect
