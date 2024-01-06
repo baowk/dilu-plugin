@@ -47,7 +47,7 @@ func (Redis) String() string {
 // 	return redisqueue.NewProducerWithOptions(options)
 // }
 
-func (r *Redis) Publish(message mq.IMessager) error {
+func (r *Redis) Publish(data []byte) error {
 	// pubsub := r.client.Publish(context.Background(), message.GetStream(), message)
 	// _, err := pubsub.Receive(context.Background())
 	// if err != nil {

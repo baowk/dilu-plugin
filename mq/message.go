@@ -5,6 +5,7 @@ import (
 )
 
 type BaseMsg struct {
+	prefix string
 	ID     string
 	Stream string
 	Values map[string]interface{}
@@ -51,12 +52,7 @@ func (m *Message) SetValues(values map[string]interface{}) {
 func (m *Message) GetPrefix() (prefix string) {
 	m.mux.Lock()
 	defer m.mux.Unlock()
-	if m.Values == nil {
-		return
-	}
-	v, _ := m.Values[PrefixKey]
-	prefix, _ = v.(string)
-	return
+	return m.prefix
 }
 
 func (m *Message) SetPrefix(prefix string) {
@@ -65,7 +61,7 @@ func (m *Message) SetPrefix(prefix string) {
 	if m.Values == nil {
 		m.Values = make(map[string]interface{})
 	}
-	m.Values[PrefixKey] = prefix
+	m.prefix = prefix
 }
 
 func (m *Message) SetErrorCount(count int) {

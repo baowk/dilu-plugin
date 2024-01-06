@@ -2,7 +2,6 @@ package rabbit
 
 import (
 	"context"
-	"encoding/json"
 	"fmt"
 	"net/url"
 	"time"
@@ -82,16 +81,8 @@ func (e *RabbitMQ) Register(queueName string, f mq.ConsumerFunc) {
 	if err != nil {
 		panic(fmt.Sprintf("consume err: %v, queue: %s", err, queueName))
 	}
-
 	for msg := range deliveries {
-
-		var cmsg mq.Message
-		err = json.Unmarshal(msg.Body, &cmsg)
-		if err != nil {
-			_ = msg.Reject(true)
-			continue
-		}
-		err = f(&cmsg)
+		err = f(msg.Body)
 		if err != nil {
 			_ = msg.Reject(true)
 			continue

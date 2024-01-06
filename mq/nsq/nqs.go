@@ -2,7 +2,6 @@ package nqs
 
 import (
 	"github.com/baowk/dilu-plugin/mq"
-	json "github.com/json-iterator/go"
 	"github.com/nsqio/go-nsq"
 )
 
@@ -64,12 +63,12 @@ func (e *NSQ) newConsumer(topic string, h nsq.Handler) (err error) {
 }
 
 // Publish 消息入生产者
-func (e *NSQ) Publish(message mq.IMessager) error {
-	rb, err := json.Marshal(message.GetValues())
-	if err != nil {
-		return err
-	}
-	return e.producer.Publish(message.GetStream(), rb)
+func (e *NSQ) Publish(data []byte) error {
+	// rb, err := json.Marshal(message.GetValues())
+	// if err != nil {
+	// 	return err
+	// }
+	return e.producer.Publish(e.channelPrefix, data)
 }
 
 // Register 监听消费者
@@ -99,12 +98,12 @@ type nsqConsumerHandler struct {
 }
 
 func (e nsqConsumerHandler) HandleMessage(message *nsq.Message) error {
-	m := new(mq.Message)
-	data := make(map[string]interface{})
-	err := json.Unmarshal(message.Body, &data)
-	if err != nil {
-		return err
-	}
-	m.SetValues(data)
-	return e.f(m)
+	// m := new(mq.Message)
+	// data := make(map[string]interface{})
+	// err := json.Unmarshal(message.Body, &data)
+	// if err != nil {
+	// 	return err
+	// }
+	// m.SetValues(data)
+	return e.f(message.Body)
 }
