@@ -8,6 +8,8 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
 	"go.mongodb.org/mongo-driver/mongo/readpref"
+
+	"github.com/baowk/dilu-plugin/mongodb/config"
 )
 
 var (
@@ -25,7 +27,7 @@ const (
 // MongoInit
 // @Description: 初始化mongo
 // @param mongoUrl
-func MongoInit(conf MongoConfig) {
+func MongoInit(conf config.MongoConfig) {
 	// 初始化链接
 	timeout := time.Duration(conf.Timeout) * time.Second
 	cleanFunc, err := New(conf.URL, timeout)
